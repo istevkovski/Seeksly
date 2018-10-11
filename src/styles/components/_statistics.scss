@@ -3,10 +3,10 @@
     flex-direction: column;
     align-items: center;
     font-family: $font-comfortaa;
-    font-size: $fnsize-temp;
     color: $clr-gray-61;
 
     .temperature {
+        font-size: $fnsize-temp;
     }
 
     .location {
