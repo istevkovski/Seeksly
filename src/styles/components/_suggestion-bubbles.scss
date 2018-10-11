@@ -1,0 +1,30 @@
+.suggestions-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.suggestions {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.suggestions:not(:last-of-type) {
+    margin-bottom: 30px;
+}
+
+.suggestion-bubble {
+    font-family: $font-comfortaa;
+    font-size: $fnsize-regular;
+    background: #B4888D;
+    color: $clr-gray-f3;
+    border-radius: 6px;
+    padding: 13px 32px;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, .32);
+    cursor: pointer;
+}
+
+.suggestion-bubble:not(:last-of-type) {
+    margin-right: 40px;
+}

@@ -1,0 +1,17 @@
+.footer {
+    position: absolute;
+    display: inline-flex;
+    flex-direction: column;
+    align-self: center;
+    align-items: center;
+    bottom: 10px;
+    padding: 5px 28px;
+    background: $clr-footer-background;
+
+    p {
+        font-family: $font-comfortaa;
+        font-size: $fnsize-footer;
+        color: $clr-gray-f3;
+        margin: 0;
+    }
+}
