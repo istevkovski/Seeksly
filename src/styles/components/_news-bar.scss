@@ -1,7 +1,6 @@
 .news-bar {
     position: relative;
     display: flex;
-    justify-content: flex-end;
     align-items: center;
     width: 100%;
     height: 30px;
@@ -11,10 +10,25 @@
     color: #fff;
     background-color: rgba(0,0,0,.24);
     cursor: default;
+    overflow: hidden;
 
     &-text {
+        position: absolute;
+        right: 20px;
         display: inline;
         margin: 0;
         padding: 0;
+        white-space: nowrap;
+        animation: newsHeadlineScroll 25s infinite linear;
+    }
+}
+
+@keyframes newsHeadlineScroll {
+    from {
+        right: -50%;
+    }
+
+    to {
+        right: 100%;
     }
 }
