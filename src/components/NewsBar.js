@@ -12,9 +12,10 @@ class NewsBar extends Component {
 
     async componentDidMount() {
         try {
-            const response = await fetch(`http://ip-api.com/json`);
+            const response = await fetch(`https://ipapi.co/json/`);
             const json = await response.json();
-            const countryCode = json.countryCode.toLowerCase();
+            console.log(json);
+            const countryCode = json.country.toLowerCase();
             if(countryCode === 'mk')
                 this.setState({ location: 'bg' });
             else

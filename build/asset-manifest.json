@@ -1,13 +1,13 @@
 {
-  "main.css": "/Seeksly/static/css/main.a8a4ba2b.chunk.css",
-  "main.js": "/Seeksly/static/js/main.be65a89c.chunk.js",
-  "main.js.map": "/Seeksly/static/js/main.be65a89c.chunk.js.map",
-  "static/js/1.1c52e3bb.chunk.js": "/Seeksly/static/js/1.1c52e3bb.chunk.js",
-  "static/js/1.1c52e3bb.chunk.js.map": "/Seeksly/static/js/1.1c52e3bb.chunk.js.map",
-  "runtime~main.js": "/Seeksly/static/js/runtime~main.098e7758.js",
-  "runtime~main.js.map": "/Seeksly/static/js/runtime~main.098e7758.js.map",
-  "static/css/main.a8a4ba2b.chunk.css.map": "/Seeksly/static/css/main.a8a4ba2b.chunk.css.map",
-  "index.html": "/Seeksly/index.html",
-  "precache-manifest.d03d5d5f98610f7b2966c00321d06c01.js": "/Seeksly/precache-manifest.d03d5d5f98610f7b2966c00321d06c01.js",
-  "service-worker.js": "/Seeksly/service-worker.js"
+  "main.css": "/static/css/main.a8a4ba2b.chunk.css",
+  "main.js": "/static/js/main.c66121a8.chunk.js",
+  "main.js.map": "/static/js/main.c66121a8.chunk.js.map",
+  "static/js/1.1c52e3bb.chunk.js": "/static/js/1.1c52e3bb.chunk.js",
+  "static/js/1.1c52e3bb.chunk.js.map": "/static/js/1.1c52e3bb.chunk.js.map",
+  "runtime~main.js": "/static/js/runtime~main.229c360f.js",
+  "runtime~main.js.map": "/static/js/runtime~main.229c360f.js.map",
+  "static/css/main.a8a4ba2b.chunk.css.map": "/static/css/main.a8a4ba2b.chunk.css.map",
+  "index.html": "/index.html",
+  "precache-manifest.b86b107093e50900d2f7ee2e9c4ac36c.js": "/precache-manifest.b86b107093e50900d2f7ee2e9c4ac36c.js",
+  "service-worker.js": "/service-worker.js"
 }
