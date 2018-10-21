@@ -2,6 +2,7 @@
   "name": "seeksly",
   "version": "0.1.0",
   "private": true,
+  "homepage": "http://seeksly.ml/build",
   "dependencies": {
     "axios": "^0.18.0",
     "blueimp-load-image": "^2.19.0",

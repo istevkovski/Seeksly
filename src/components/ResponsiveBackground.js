@@ -18,7 +18,7 @@ class ResponsiveBackground extends Component {
         rBckgCanvas.width = window.screen.width;
         rBckgCanvas.height = window.screen.height;
         img.crossOrigin = "Anonymous";
-        img.src = "https://picsum.photos/1366/768/?random";
+        img.src = `https://picsum.photos/${window.screen.width}/${window.screen.height}/?random`;
         img.onload = function(){
             ctx.drawImage(img,0,0); // Or at whatever offset you like
             const fac = new FastAverageColor();
