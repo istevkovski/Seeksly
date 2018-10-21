@@ -14,7 +14,6 @@ class NewsBar extends Component {
         try {
             const response = await fetch(`https://ipapi.co/json/`);
             const json = await response.json();
-            console.log(json);
             const countryCode = json.country.toLowerCase();
             if(countryCode === 'mk')
                 this.setState({ location: 'bg' });
