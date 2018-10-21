@@ -20,3 +20,17 @@ export const fetchSatelitePosition = (gps) => dispatch => {
         payload: gps
     })
 }
+
+export const updateSearchTerm = (term) => dispatch => {
+    dispatch({
+        type: 'UPDATE_SEARCH_TERM',
+        payload: term
+    })
+}
+
+export const searchAutocomplete = (array) => dispatch => {
+    dispatch({
+        type: 'SAVE_SEARCH_AUTOCOMPLETE',
+        payload: array
+    })
+}

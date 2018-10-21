@@ -28,7 +28,8 @@
         margin-left: 40px;
         overflow: hidden;
 
-        &:focus-within {
+        &:focus-within,
+        {
             label {
                 left: -60px;
                 opacity: 0;
@@ -57,6 +58,11 @@
             opacity: 1;
             transition: all .5s;
             pointer-events: none;
+        }
+
+        .hasSearchTerm {
+            left: -60px;
+            opacity: 0;
         }
     }
 
