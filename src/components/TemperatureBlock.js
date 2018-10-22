@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import store from '../store';
 import {fetchLocation, fetchSatelitePosition} from '../actions/Types';
 
-const IPDATA_API_KEY = '97c8ed3fa4d7eb6f35d8d0531aa54b4de00d899574a7950b2d7e2f20';
+const IPDATA_API_KEY = process.env.REACT_APP_IPDATA_API_KEY;
 const IPDATA_API_LINK = 'https://api.ipdata.co?api-key=';
 let wrapPosition = {};
 let wrapLocationInfo = {};

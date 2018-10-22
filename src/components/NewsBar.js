@@ -4,7 +4,6 @@ class NewsBar extends Component {
     constructor() {
         super();
         this.state = {
-            newsApiKey: '024657d91117492fb55b8ccd59d9ecf6',
             location: '',
             news: ''
         };
@@ -23,7 +22,7 @@ class NewsBar extends Component {
             console.log(error);
         }
 
-        const url = `https://newsapi.org/v2/top-headlines?country=${this.state.location}&pageSize=1&apiKey=${this.state.newsApiKey}`;
+        const url = `https://newsapi.org/v2/top-headlines?country=${this.state.location}&pageSize=1&apiKey=${process.env.REACT_APP_NEWS_API_KEY}`;
         fetch(url).then((response) => {
             response.json().then((data) => {
                 this.setState({news: data.articles[0].title});
