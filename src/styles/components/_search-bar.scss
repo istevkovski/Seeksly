@@ -76,7 +76,7 @@
         align-items: center;
         align-self: center;
         margin-right: 8px;
-        width: 100px;
+        width: 110px;
         height: 46px;
         border: none;
         border-radius: 23px;
@@ -86,6 +86,10 @@
         img {
             width: 24px;
             pointer-events: none;
+        }
+
+        @media only screen and (max-width: 768px) {
+            width: 100px;
         }
     }
 }

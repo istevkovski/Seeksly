@@ -15,7 +15,7 @@ class SearchBar extends Component {
 
     handleFormSubmit(e) {
         e.preventDefault();
-        window.location.replace(`https://google.com/search?q=${this.searchInput.current.value}`);
+        window.location.href = `https://google.com/search?q=${this.searchInput.current.value}`;
     }
 
     handleSearchInputChange() {
