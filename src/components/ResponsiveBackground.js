@@ -24,6 +24,7 @@ class ResponsiveBackground extends Component {
             const fac = new FastAverageColor();
             const color = fac.getColor(document.getElementById('rBckgCanvas'));
             store.dispatch(getAvgColor(color));
+            document.querySelectorAll('section.preloader')[0].classList.add('loaded');
             // console.log(color);
         };
     }

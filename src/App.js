@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 // Components
+import Preloader from './components/Preloader';
 import Logo from './components/Logo';
 import ResponsiveBackground from './components/ResponsiveBackground';
 import NewsBar from './components/NewsBar';
@@ -24,6 +25,7 @@ class App extends Component {
   render() {  
     return (
       <div className="app">
+        <Preloader />
         <ResponsiveBackground />
         <NewsBar />
         <div className="headsup-block">
