@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import store from '../store';
+import Color from 'color';
 
 class Logo extends Component {
     componentDidMount() {
         store.subscribe(() => {
-            document.querySelectorAll('path#path').forEach(item => item.style.fill = store.getState().Actions.rBckgAvgColor);
+            document.querySelectorAll('path#path').forEach(item => item.style.fill = Color(store.getState().Actions.rBckgAvgColor).lighten(0.5));
         });
     }
 

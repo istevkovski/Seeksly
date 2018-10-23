@@ -25,7 +25,7 @@ class App extends Component {
   render() {  
     return (
       <div className="app">
-        <canvas style={{position: "fixed", zIndex:"-1"}} id="myCanvas" width={window.screen.width} height={window.screen.width}></canvas>
+        <canvas style={{position: "fixed", zIndex:"-1"}} id="myCanvas" width={window.screen.width} height={window.screen.height}></canvas>
         <Preloader />
         <ResponsiveBackground />
         <NewsBar />

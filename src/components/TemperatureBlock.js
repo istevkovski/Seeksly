@@ -20,19 +20,21 @@ class TemperatureBlock extends Component {
             paper.setup(canvas);
             var raster = new paper.Raster('rBckgCanvas');
             raster.position = paper.view.center;
-            raster.opacity = 0;
+            raster.opacity = 0.1;
             const weatherBlock = document.querySelectorAll('.statistics-block-1')[0];
             const weatherPosInfo = {
-                x: (window.screen.width/2)-weatherBlock.offsetWidth/2,
-                y: 100,
+                x: weatherBlock.getBoundingClientRect().left,
+                y: weatherBlock.getBoundingClientRect().top,
                 width: weatherBlock.offsetWidth,
                 height: weatherBlock.offsetHeight
             };
+            // var rect = new paper.Path.Rectangle(weatherPosInfo);
+            // rect.strokeColor = '#fff';
             // console.log(weatherPosInfo);
             // console.log(raster.getAverageColor(weatherPosInfo).lightness);
             // console.log(raster.getAverageColor(weatherPosInfo));
             const backgroundLightness = raster.getAverageColor(weatherPosInfo).lightness;
-            if(backgroundLightness <= 0.5)
+            if(backgroundLightness <= 0.52)
                 this.statisticsBlock1.current.style.color = '#fff';
             if(document.getElementById('myCanvas'))
                 document.getElementById('myCanvas').remove();
@@ -79,6 +81,9 @@ class TemperatureBlock extends Component {
 
     componentDidMount() {
         this.getLocation();
+    }
+
+    componentDidUpdate() {
         store.subscribe(() => {
             if(store.getState().backgroundReady.backgroundLoaded === true){
                 this.getAreaAvgColor();
