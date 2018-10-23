@@ -22,6 +22,10 @@
         opacity: 95;
     }
 
+    @media only screen and (max-width: 768px) {
+        margin: 0 5px 20vh 5px;
+    }
+
     .search-input-wrapper {
         position: relative;
         flex: 1;

@@ -3,6 +3,13 @@
     top: 60px;
     left: 70px;
     width: 186px;
+
+    @media only screen and (max-width: 768px) {
+        position: relative;
+        top: unset;
+        left: unset;
+        width: 100px;
+    }
 }
   
 .logo svg path {

@@ -6,4 +6,9 @@
     padding: 70px;
     padding-bottom: 0;
     margin-bottom: 11vh;
+
+    @media only screen and (max-width: 768px) {
+        justify-content: space-between;
+        padding: 10px 15px;
+    }
 }
