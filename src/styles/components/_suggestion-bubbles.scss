@@ -43,12 +43,22 @@
         transform: translateY(1px);
     }
 
+    &:not(:last-of-type) {
+        margin-right: 40px;
+    }
+
     @media only screen and (max-width: 768px) {
         margin: 0 5px;
         margin-bottom: 15px;
-    }
-}
 
-.suggestion-bubble:not(:last-of-type) {
-    margin-right: 40px;
+        &:nth-child(even) {
+            margin-left: 0px;
+            margin-right: 40px;
+        }
+    
+        &:nth-child(odd) {
+            margin-right: 0px;
+            margin-left: 40px;
+        }
+    }
 }

@@ -7,6 +7,13 @@ export const getAvgColor = (color) => dispatch => {
     })
 };
 
+export const backgroundReady = (bool) => dispatch => {
+    dispatch({
+        type: 'BACKGROUND_LOADED',
+        payload: bool
+    })
+};
+
 export const fetchLocation = (position) => dispatch => {
     dispatch({
         type: 'FETCH_LOCATION',

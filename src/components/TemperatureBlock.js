@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import store from '../store';
-import {fetchLocation, fetchSatelitePosition} from '../actions/Types';
+import {fetchLocation, fetchSatelitePosition, backgroundReady} from '../actions/Types';
+import paper from 'paper';
 
 const IPDATA_API_KEY = process.env.REACT_APP_IPDATA_API_KEY;
 const IPDATA_API_LINK = 'https://api.ipdata.co?api-key=';
@@ -12,6 +13,29 @@ class TemperatureBlock extends Component {
     constructor(props) {
         super(props);
         this.statisticsBlock1 = React.createRef();
+    }
+
+    getAreaAvgColor() {
+            var canvas = document.getElementById('myCanvas');
+            paper.setup(canvas);
+            var raster = new paper.Raster('rBckgCanvas');
+            raster.position = paper.view.center;
+            raster.opacity = 0;
+            const weatherBlock = document.querySelectorAll('.statistics-block-1')[0];
+            const weatherPosInfo = {
+                x: (window.screen.width/2)-weatherBlock.offsetWidth/2,
+                y: 100,
+                width: weatherBlock.offsetWidth,
+                height: weatherBlock.offsetHeight
+            };
+            // console.log(weatherPosInfo);
+            // console.log(raster.getAverageColor(weatherPosInfo).lightness);
+            // console.log(raster.getAverageColor(weatherPosInfo));
+            const backgroundLightness = raster.getAverageColor(weatherPosInfo).lightness;
+            if(backgroundLightness <= 0.5)
+                this.statisticsBlock1.current.style.color = '#fff';
+            if(document.getElementById('myCanvas'))
+                document.getElementById('myCanvas').remove();
     }
     
     getLocation() {
@@ -56,10 +80,10 @@ class TemperatureBlock extends Component {
     componentDidMount() {
         this.getLocation();
         store.subscribe(() => {
-            if(store.getState().Actions.rBckgIsDark === true)
-                this.statisticsBlock1.current.style.color = '#fff';
-            else
-                this.statisticsBlock1.current.style.color = '#616161';
+            if(store.getState().backgroundReady.backgroundLoaded === true){
+                this.getAreaAvgColor();
+                store.dispatch(backgroundReady(false));
+            }
         });
     }
 

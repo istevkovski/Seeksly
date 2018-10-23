@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import store from '../store';
-import {getAvgColor} from '../actions/Types';
+import {getAvgColor, backgroundReady} from '../actions/Types';
 import FastAverageColor from 'fast-average-color';
 
 
@@ -24,6 +24,7 @@ class ResponsiveBackground extends Component {
             const fac = new FastAverageColor();
             const color = fac.getColor(document.getElementById('rBckgCanvas'));
             store.dispatch(getAvgColor(color));
+            store.dispatch(backgroundReady(true));
             document.querySelectorAll('section.preloader')[0].classList.add('loaded');
             // console.log(color);
         };

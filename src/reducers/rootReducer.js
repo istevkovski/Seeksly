@@ -6,6 +6,7 @@ import fetchLocation from './fetchLocation';
 import fetchSatelitePosition from './fetchSatelitePosition';
 import updateSearchTerm from './updateSearchTerm';
 import searchAutocomplete from './searchAutocomplete';
+import backgroundReady from './backgroundReady';
 import Actions from './Actions';
 
 
@@ -14,5 +15,6 @@ export default combineReducers({
     fetchSatelitePosition,
     updateSearchTerm,
     searchAutocomplete,
+    backgroundReady,
     Actions
 });
