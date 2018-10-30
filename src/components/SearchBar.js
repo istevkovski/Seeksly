@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import store from '../store';
+import $ from 'jquery';
 import {updateSearchTerm, searchAutocomplete} from '../actions/Types';
 
 class SearchBar extends Component {
@@ -23,13 +24,22 @@ class SearchBar extends Component {
         if(this.timeout) clearTimeout(this.timeout);
         this.timeout = setTimeout(() => {
             if(store.getState().updateSearchTerm.searchTerm !== undefined && store.getState().updateSearchTerm.searchTerm !== ''){
-                fetch(`https://cors-escape.herokuapp.com/http://suggestqueries.google.com/complete/search?client=firefox&q=${store.getState().updateSearchTerm.searchTerm}`)
-                    .then(promise => {
-                        return promise.json();
-                    })
-                    .then(promiseJSON => {
-                        store.dispatch(searchAutocomplete(promiseJSON[1].slice(0, 5)));
-                    });
+                var url = 'https://api.bing.com/osjson.aspx?JsonType=callback&JsonCallback=?';
+                $.getJSON(url, {
+                    query: store.getState().updateSearchTerm.searchTerm
+                }, function (data) {
+                    store.dispatch(searchAutocomplete(data[1].slice(0, 5)));
+                });
+
+                // fetch(`https://www.google.com/complete/search?client=toolbar&q=${store.getState().updateSearchTerm.searchTerm}`)
+                //     .then(promise => {
+                //         console.log(promise);
+                //         return promise.json();
+                //     })
+                //     .then(promiseJSON => {
+                //         console.log(promiseJSON);
+                //         store.dispatch(searchAutocomplete(promiseJSON[1].slice(0, 5)));
+                //     });
             }
         }, 750);
     }
